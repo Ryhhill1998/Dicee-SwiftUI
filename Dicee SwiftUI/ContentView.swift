@@ -17,11 +17,15 @@ struct ContentView: View {
             VStack {
                 Image("diceeLogo")
                 
+                Spacer()
+                
                 HStack {
                     DiceView(n: 1)
                     DiceView(n: 2)
                 }
                 .padding(.horizontal)
+                
+                Spacer()
                 
                 Button(action: {
                     
@@ -33,8 +37,9 @@ struct ContentView: View {
                         .padding(.vertical, 10.0)
                         .padding(.horizontal, 15.0)
                 })
-                .background(Color(hue: 1.0, saturation: 0.028, brightness: 0.231))
+                .background(.cyan)
             }
+            .padding()
         }
     }
 }
