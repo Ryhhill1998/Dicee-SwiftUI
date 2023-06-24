@@ -18,13 +18,22 @@ struct ContentView: View {
                 Image("diceeLogo")
                 
                 HStack {
-                    DiceView()
-                    DiceView()
+                    DiceView(n: 1)
+                    DiceView(n: 2)
                 }
+                .padding(.horizontal)
                 
-                Button("Roll") {
-                    /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
-                }
+                Button(action: {
+                    
+                }, label: {
+                    Text("Roll")
+                        .font(.system(size: 40))
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .padding(.vertical, 10.0)
+                        .padding(.horizontal, 15.0)
+                })
+                .background(Color(hue: 1.0, saturation: 0.028, brightness: 0.231))
             }
         }
     }
@@ -37,9 +46,13 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 struct DiceView: View {
+    
+    let n: Int
+    
     var body: some View {
-        Image("dice1")
+        Image("dice\(n)")
             .resizable()
             .aspectRatio(contentMode: .fit)
+            .padding(.all)
     }
 }
