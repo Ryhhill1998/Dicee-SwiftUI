@@ -9,18 +9,37 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        ZStack {
+            Image("background")
+                .resizable()
+                .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+            
+            VStack {
+                Image("diceeLogo")
+                
+                HStack {
+                    DiceView()
+                    DiceView()
+                }
+                
+                Button("Roll") {
+                    /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                }
+            }
         }
-        .padding()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+struct DiceView: View {
+    var body: some View {
+        Image("dice1")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
     }
 }
